@@ -5,11 +5,19 @@ MyPantry web application code
 ```console
 git clone git@github.com:kai-OB/my_pantry.git
 ```
-2. checkout the __cse115A__ branch
+2. cd into project directory <br/>
+```console
+cd my_pantry
+```
+3. checkout the __cse115A__ branch
 ```console
 git checkout cse115A
 ```
-3. run the server
+4. install express
+```console
+npm install express --no-save
+```
+5. run the server
 ```console
 node app.js
 ```
