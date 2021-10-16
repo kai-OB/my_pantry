@@ -1,6 +1,6 @@
 # my_pantry
 MyPantry web application code
-## CSE 115A Instructions
+## Installation Instructions
 1. clone the repo <br/>
 ```console
 git clone git@github.com:kai-OB/my_pantry.git
