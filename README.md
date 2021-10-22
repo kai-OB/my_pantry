@@ -9,11 +9,11 @@ git clone git@github.com:kai-OB/my_pantry.git
 ```console
 cd my_pantry
 ```
-3. install express
+3. get project dependencies
 ```console
-npm install express --no-save
+npm install
 ```
 4. run the server
 ```console
-node app.js
+npm start
 ```
