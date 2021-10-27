@@ -3,16 +3,35 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
 
+// tentative place until I can put this in env
+const connStr = "mongodb+srv://wmorris:CSE115A@mypantrywebapp.xgm37.mongodb.net/test?retryWrites=true&w=majority"
+
+// connect to database
+mongoose.connect(connStr,
+  {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+  })
+
+// verify connection
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error: "));
+db.once("open", function () {
+  console.log("Connected successfully");
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+// middleware
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
