@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
+var env = require('dotenv').config();
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -11,9 +12,9 @@ var usersRouter = require('./routes/users');
 var app = express();
 
 // tentative place until I can put this in env
-const connStr = "mongodb+srv://wmorris:CSE115A@mypantrywebapp.xgm37.mongodb.net/test?retryWrites=true&w=majority"
+const connStr = process.env.DB_CONN_STR
 
-// connect to database
+// connect to database 
 mongoose.connect(connStr,
   {
       useNewUrlParser: true,
