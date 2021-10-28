@@ -12,9 +12,9 @@ var usersRouter = require('./routes/users');
 var app = express();
 
 // tentative place until I can put this in env
-const connStr = process.env.DB_CONN_STR
+const connStr = process.env.DB_DEV_CONN_STR
 
-// connect to database 
+// connect to database
 mongoose.connect(connStr,
   {
       useNewUrlParser: true,
